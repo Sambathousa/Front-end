@@ -1,4 +1,19 @@
-/// <reference types="vite/client" />
+import { defineConfig } from 'vite';
+import tailwindcss from '@tailwindcss/vite';
 
-
-declare module '*.css';
+export default defineConfig({
+  base: '/Front-end/',
+  plugins: [tailwindcss()],
+  build: {
+    rollupOptions: {
+      input: {
+        home: 'index.html',
+        menu: 'menu.html',
+        about: 'about.html',
+        gallery: 'gallery.html',
+        contact: 'contact.html',
+        orders: 'orders.html'
+      }
+    }
+  }
+});
